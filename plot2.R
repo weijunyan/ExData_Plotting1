@@ -1,0 +1,5 @@
+attach(house1)
+week <-paste(house1$Date,house1$Time)
+week1 <-strptime(week,"%y%y-%m-%d %H:%M:%S") 
+tt1<-as.numeric(as.matrix(house1$Global_active_power))
+plot(week1,tt1,type="l",xlab="",ylab="Golbal Active Power (Kilowatts)")

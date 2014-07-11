@@ -1,0 +1,11 @@
+attach(house1)
+week <-paste(house1$Date,house1$Time)
+week1 <-strptime(week,"%y%y-%m-%d %H:%M:%S") 
+TT<-house1[,c(7,8,9)]
+TT1<-as.numeric(as.matrix(TT[,1]))
+TT2<-as.numeric(as.matrix(TT[,2]))
+TT3<-as.numeric(as.matrix(TT[,3]))
+plot(week1,TT1,type="l",col=1,xlab="",ylab="Enegery Sub metering")
+lines(week1,TT2,type="l",col=2)
+lines(week1,TT3,type="l",col=4)
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=2,col=c(1,2,4))
